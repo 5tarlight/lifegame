@@ -6,6 +6,7 @@ $(() => {
   }
   window.shower = {
     score: $('#h-score'),
+    round: $('#h-round'),
     msg: $('#h-msg')
   }
   window.playerType = ['random']
@@ -14,10 +15,12 @@ $(() => {
       player: 0,
       pc: 0
     },
-    aiType: window.playerType[0]
+    aiType: window.playerType[0],
+    round: []
   }
 
   updateScreen()
+  startGame()
 })
 
 function updateScreen(msg) {
