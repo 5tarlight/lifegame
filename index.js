@@ -19,6 +19,9 @@ $(() => {
     round: []
   }
 
+  window.selectors.cooperate.on('click', onCooperate)
+  window.selectors.batray.on('click', onBatray)
+
   updateScreen()
   startGame()
 })
@@ -28,6 +31,8 @@ function updateScreen(msg) {
     v.prop('disabled', !window.isOnSelection)
   })
 
+  
   window.shower.score.text(`${window.gameData.score.player} : ${window.gameData.score.pc}`)
+  window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)
   window.shower.msg.text(msg || '아래의 버튼을 눌러 선택하세요.')
 }
