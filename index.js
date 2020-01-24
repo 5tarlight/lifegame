@@ -52,6 +52,9 @@ function updateScreen(msg) {
     
     window.shower.playerChoice.text(playerc)
     window.shower.pcChoice.text(pcc)
+
+    window.shower.playerDelta.text(round.playerDelta)
+    window.shower.pcDelta.text(round.pcDelta)
   }
 
   window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)

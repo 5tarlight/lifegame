@@ -17,7 +17,6 @@ function submitAnswer(answer) {
     pc: elements[rand]
   }
 
-  window.gameData.round.push(round)
   updateScore(round)
 }
 
@@ -27,18 +26,25 @@ function updateScore(round) {
   if(round.player == round.pc) {
     if(round.player == 'cooperate') {
       window.gameData.score.player = score.player + 1
+      round.playerDelta = 1
       window.gameData.score.pc = score.pc + 1
+      round.pcDelta = 1
     }
   } else {
     if(round.player == 'cooperate') {
         window.gameData.score.player = score.player - 1
+        round.playerDelta = -1
         window.gameData.score.pc = score.pc + 3
+        round.pcDelta = 3
     } else {
       window.gameData.score.player = score.player + 3
+      round.playerDelta = 3
       window.gameData.score.pc = score.pc - 1
+      round.pcDelta = -1
     }
   }
 
+  window.gameData.round.push(round)
   updateScreen()
 }
 
