@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>인생 시뮬레이터</title>
     
-    <link rel="stylesheet" href="index.css">
-
     <script src="jquery.js"></script>
     <script src="index.js"></script>
     <script src="game.js"></script>
+    
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   </head>
   <body>
     <table class="tg" style="table-layout: fixed; width: 656px">
@@ -49,7 +50,9 @@
       </tr>
     </table>
 
-    <input id="btn-cooperate" type="button" value="협력">
-    <input id="btn-batray" type="button" value="배신">
+    <div class="btn-group" role="group" aria-label="...">
+      <button id="btn-cooperate" type="button" class="btn btn-default">협력</button>
+      <button id="btn-batray" type="button" class="btn btn-default">배신</button>
+    </div>
   </body>
 </html>
