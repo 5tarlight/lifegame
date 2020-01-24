@@ -43,8 +43,6 @@ function updateScreen(msg) {
   const index = window.gameData.round.length == 0 ? 0 : window.gameData.round.length - 1
   const round = window.gameData.round[index] ? window.gameData.round[index] : null
   
-  console.log(round)
-  
   window.shower.playerScore.text(window.gameData.score.player)
   window.shower.pcScore.text(window.gameData.score.pc)
   
@@ -55,7 +53,7 @@ function updateScreen(msg) {
     window.shower.playerChoice.text(playerc)
     window.shower.pcChoice.text(pcc)
   }
-  
+
   window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)
   window.shower.msg.text(msg || '아래의 버튼을 눌러 선택하세요.')
 }

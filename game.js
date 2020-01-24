@@ -24,7 +24,7 @@ function submitAnswer(answer) {
 function updateScore(round) {
   const score = window.gameData.score
 
-  if(round.player == round.bot) {
+  if(round.player == round.pc) {
     if(round.player == 'cooperate') {
       window.gameData.score.player = score.player + 1
       window.gameData.score.pc = score.pc + 1
