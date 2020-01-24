@@ -10,7 +10,7 @@ function nextRound() {
 
 function submitAnswer(answer) {
   const elements = ['cooperate', 'batray']
-  const rand = Math.floor(Math.random() * 2)
+  const rand = Math.floor(Math.random() * elements.length)
 
   const round = {
     player: answer,
