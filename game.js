@@ -14,7 +14,7 @@ function submitAnswer(answer) {
 
   const round = {
     player: answer,
-    bot: elements[rand]
+    pc: elements[rand]
   }
 
   window.gameData.round.push(round)
