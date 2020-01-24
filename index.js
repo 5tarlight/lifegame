@@ -7,9 +7,13 @@ $(() => {
   }
 
   window.shower = {
-    score: $('#h-score'),
+    playerScore: $('#h-player-score'),
+    pcScore: $('#h-pc-score'),
+    playerDelta: $('#h-player-score-delta'),
+    pcDelta: $('#h-pc-score-delta'),
+    playerChoice: $('#h-player-choice'),
+    pcChoice: $('#h-pc-choice'),
     round: $('#h-round'),
-    choice: $('#h-choice'),
     msg: $('#h-msg')
   }
 
@@ -41,13 +45,15 @@ function updateScreen(msg) {
   
   console.log(round)
   
-  window.shower.score.text(`${window.gameData.score.player} : ${window.gameData.score.pc}`)
+  window.shower.playerScore.text(window.gameData.score.player)
+  window.shower.pcScore.text(window.gameData.score.pc)
   
   if(round) {
     const playerc = round.player == 'cooperate' ? '협력' : "배신"
     const pcc = round.pc == 'cooperate' ? '협력' : "배신"
     
-    window.shower.choice.text(`${playerc}\t${pcc}`)
+    window.shower.playerChoice.text(playerc)
+    window.shower.pcChoice.text(pcc)
   }
   
   window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)
