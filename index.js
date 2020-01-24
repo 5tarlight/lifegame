@@ -55,6 +55,15 @@ function updateScreen(msg) {
 
     window.shower.playerDelta.text(round.playerDelta)
     window.shower.pcDelta.text(round.pcDelta)
+
+    window.shower.playerDelta.removeClass('minus').removeClass('plus')
+    window.shower.pcDelta.removeClass('minus').removeClass('plus')
+
+    if(round.playerDelta < 0) window.shower.playerDelta.addClass('minus')
+    else if(round.playerDelta > 0) window.shower.playerDelta.addClass('plus')
+
+    if(round.pcDelta < 0) window.shower.pcDelta.addClass('minus')
+    else if(round.pcDelta > 0) window.shower.pcDelta.addClass('plus')
   }
 
   window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)

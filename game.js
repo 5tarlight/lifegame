@@ -29,6 +29,9 @@ function updateScore(round) {
       round.playerDelta = 1
       window.gameData.score.pc = score.pc + 1
       round.pcDelta = 1
+    } else {
+      round.playerDelta = 0
+      round.pcDelta = 0
     }
   } else {
     if(round.player == 'cooperate') {
