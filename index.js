@@ -38,13 +38,17 @@ function updateScreen(msg) {
 
   const index = window.gameData.round.length == 0 ? 0 : window.gameData.round.length - 1
   const round = window.gameData.round[index] ? window.gameData.round[index] : null
-
+  
   console.log(round)
-
+  
   window.shower.score.text(`${window.gameData.score.player} : ${window.gameData.score.pc}`)
   
-  if(round)
-    window.shower.choice.text(`${round.player}\t${round.pc}`)
+  if(round) {
+    const playerc = round.player == 'cooperate' ? '협력' : "배신"
+    const pcc = round.pc == 'cooperate' ? '협력' : "배신"
+    
+    window.shower.choice.text(`${playerc}\t${pcc}`)
+  }
   
   window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)
   window.shower.msg.text(msg || '아래의 버튼을 눌러 선택하세요.')
