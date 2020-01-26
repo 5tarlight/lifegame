@@ -1,5 +1,7 @@
 function startGame() {
   window.shower.msg.text('잠시후 게임이 시작됩니다.')
+  window.shower.aiName.text(window.gameData.aiType.name)
+
   setTimeout(nextRound, 1000)
 }
 
@@ -9,12 +11,11 @@ function nextRound() {
 }
 
 function submitAnswer(answer) {
-  const elements = ['cooperate', 'batray']
-  const rand = Math.floor(Math.random() * elements.length)
+  const aiAnswer = window.gameData.aiType.getChoice()
 
   const round = {
     player: answer,
-    pc: elements[rand]
+    pc: aiAnswer
   }
 
   updateScore(round)

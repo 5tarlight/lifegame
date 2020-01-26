@@ -7,6 +7,7 @@ $(() => {
   }
 
   window.shower = {
+    aiName: $('#h-pc-name'),
     playerScore: $('#h-player-score'),
     pcScore: $('#h-pc-score'),
     playerDelta: $('#h-player-score-delta'),
@@ -17,14 +18,14 @@ $(() => {
     msg: $('#h-msg')
   }
 
-  window.playerType = ['random']
+  window.playerType = [new Friendly()]
 
   window.gameData = {
     score: {
       player: 0,
       pc: 0
     },
-    aiType: window.playerType[0],
+    aiType: getRandomValue(window.playerType),
     round: []
   }
 
@@ -68,4 +69,9 @@ function updateScreen(msg) {
 
   window.shower.round.text(`${window.gameData.round.length + 1} 라운드`)
   window.shower.msg.text(msg || '아래의 버튼을 눌러 선택하세요.')
+}
+
+function getRandomValue(arr) {
+  const random = Math.floor(Math.random() * arr.length)
+  return arr[random]
 }
