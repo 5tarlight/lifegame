@@ -1,16 +1,16 @@
-function startGame() {
+function startGame () {
   window.shower.msg.text('잠시후 게임이 시작됩니다.')
   window.shower.aiName.text(window.gameData.aiType.name)
 
   setTimeout(nextRound, 1000)
 }
 
-function nextRound() {
+function nextRound () {
   window.isOnSelection = true
   updateScreen('아래의 버튼을 눌러 선택하세요.')
 }
 
-function submitAnswer(answer) {
+function submitAnswer (answer) {
   const aiAnswer = window.gameData.aiType.getChoice()
 
   const round = {
@@ -21,11 +21,11 @@ function submitAnswer(answer) {
   updateScore(round)
 }
 
-function updateScore(round) {
+function updateScore (round) {
   const score = window.gameData.score
 
-  if(round.player == round.pc) {
-    if(round.player == 'cooperate') {
+  if (round.player == round.pc) {
+    if (round.player == 'cooperate') {
       window.gameData.score.player = score.player + 1
       round.playerDelta = 1
       window.gameData.score.pc = score.pc + 1
@@ -35,11 +35,11 @@ function updateScore(round) {
       round.pcDelta = 0
     }
   } else {
-    if(round.player == 'cooperate') {
-        window.gameData.score.player = score.player - 1
-        round.playerDelta = -1
-        window.gameData.score.pc = score.pc + 3
-        round.pcDelta = 3
+    if (round.player == 'cooperate') {
+      window.gameData.score.player = score.player - 1
+      round.playerDelta = -1
+      window.gameData.score.pc = score.pc + 3
+      round.pcDelta = 3
     } else {
       window.gameData.score.player = score.player + 3
       round.playerDelta = 3
@@ -52,14 +52,14 @@ function updateScore(round) {
   updateScreen()
 }
 
-function onCooperate(e) {
+function onCooperate (e) {
   e.preventDefault()
 
-  if(window.isOnSelection) submitAnswer('cooperate')
+  if (window.isOnSelection) submitAnswer('cooperate')
 }
 
-function onBatray(e) {
+function onBatray (e) {
   e.preventDefault()
 
-  if(window.isOnSelection) submitAnswer('batray')
+  if (window.isOnSelection) submitAnswer('batray')
 }

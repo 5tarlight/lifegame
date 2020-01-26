@@ -1,9 +1,9 @@
 class Friendly extends Player {
-  constructor() {
+  constructor () {
     super('조력자')
   }
 
-  getChoice() {
+  getChoice () {
     return 'cooperate'
   }
 }
