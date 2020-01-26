@@ -18,7 +18,10 @@ $(() => {
     msg: $('#h-msg')
   }
 
-  window.playerType = [new Friendly()]
+  window.playerType = [
+    new Friendly(),
+    new Hostile(),
+  ]
 
   window.gameData = {
     score: {
