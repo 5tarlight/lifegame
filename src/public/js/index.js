@@ -1,5 +1,5 @@
 $(() => {
-  console.log('진정한 완성은 이 아래 아무것도 없는것이다.') 
+  console.log('진정한 완성은 이 아래 아무것도 없는것이다.')
 
   window.isOnSelection = false
 
@@ -22,7 +22,7 @@ $(() => {
 
   window.playerType = [
     new Friendly(),
-    new Hostile(),
+    new Hostile()
   ]
 
   window.gameData = {
